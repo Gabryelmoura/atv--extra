@@ -11,7 +11,7 @@
     <script src="./js/sessao.js"></script>
 
     <link rel="stylesheet" href="./css/estilo.css">
-    <link rel="icon" href="./assets/icon/favicon2.ico">
+    <link rel="icon" href="./assets/icon/logo.png">
     <link rel="preconnect" href="https://fonts.gstatic.com">
 </head>
 
@@ -24,58 +24,88 @@
             <a href="#">Home</a>
           </li>
           <li>
-            <a href="simulador.html">Sobre Nós</a>
-          </li>
-          <li>|</li>
-          <li>
-            <a href="login.html">Contato</a>
+            <a href="#social">Sobre Nós</a>
           </li>
           <li>
-            <a href="cadastro.html">Entrar no Sistema</a>
+            <a href="#contato">Contato</a>
+          </li>
+          <li>
           </li>
         </ul>
+        <button onclick="entrar()" id="btn_entrar">Entrar no Sistema</button>
       </div>
     </div>
   
-    <div class="banner">
+    <div class="banner" style="display: flex;">
       <div class="container">
-        <p>Preservando <span>hoje</span> para existirem <span>amanhã</span>.</p>
+        <h1>Precisão em cada gota. <br> Confiança em <span>cada dose.</span></h1>
+
+        <div class="texto-banner">
+          <h2>Sistema inteligente de verificação de volume para linhas de produção farmacêutica.</h2>
+
+          <p>Monitoramento em tempo real, alta precisão e conformidade garantida para a qualidade que sua produção exige.</p>
+
+          <button id="conheca" onclick="descer()">Conheça o Produto</button>
+          <button id="saiba" onclick="descer()">Saiba Mais </button>
+        </div>
       </div>
     </div>
   
-    <div class="social">
+    <div id="social" class="social">
       <div class="container">
+        <h2 style="text-align: center; color: #0F8C80;">Sobre Nós</h2>
         <div class="boxes">
           <div class="box">
-            <img src="assets/imgs/planet-earth_color.png">
-            <h4>Missão</h4>
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Et, quas cupiditate asperiores provident magnam
-              vitae illum iusto fugiat atque deleniti nulla sed iure suscipit, laborum, aliquid accusantium cum dicta
-              minima.</p>
+            <img src="assets/imgs/organizacao.png">
+            <h3>A Empresa</h3>
+
+            <h4>PharmaVeris nasceu da união entre ciência, tecnologia e compromisso com a saúde.</h4>
+
+            <p>Desenvolvemos soluções inovadoras para o controle de qualidade na indústria farmaceutica, promovendo segurança, eficiência e conformidade em cada etapa da produção.</p>
           </div>
+
+          <div class="linha"></div>
+
           <div class="box">
-            <img src="assets/imgs/lightbulb_color.png">
-            <h4>Visão</h4>
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Et, quas cupiditate asperiores provident magnam
-              vitae illum iusto fugiat atque deleniti nulla sed iure suscipit, laborum, aliquid accusantium cum dicta
-              minima.</p>
+            <img src="assets/imgs/cubo.png">
+            <h3>O Produto</h3>
+
+            <h4>O Pharmaveris Monitor é um sistema inteligente de verificação de volume</h4>
+
+            <p>Utiliza sensores de alta precisão e algoritmos avançados para monitorar, em tempo real, o volume de liquidos em frascos e recipientes nas linhas de produção.</p>
           </div>
+
+          <div class="linha"></div>
+
           <div class="box">
-            <img src="assets/imgs/growth_color.png">
-            <h4>Valores</h4>
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Et, quas cupiditate asperiores provident magnam
-              vitae illum iusto fugiat atque deleniti nulla sed iure suscipit, laborum, aliquid accusantium cum dicta
-              minima.</p>
+            <img src="assets/imgs/alvo.png">
+            <h3>O Objetivo</h3>
+
+            <h4>Garantir Precisão, qualidade e segurança em cada dose produzida.</h4>
+
+            <p>Nosso objetivo é reduzir perdas, assegurar conformidade com normas regulatórias e entregar tranquilidade para laboratóruos, industrias e, principalmente, para quem mais importa: as pessoas.</p>
           </div>
         </div>
       </div>
     </div>
   
     <div class="footer">
-      <div class="container">
-        <h4>Feito com amor por aluno &hearts; SPTech &copy; 2023-2026</h4>
+      <div class="container" id="contato">
+        <img src="assets/icon/logo.png" alt="Logo">
+        <p>Telefone: 1199999-9999 | PharmaVeriz@gmail.com | instagram: PhramaVeriz_Brasil</p>
+        <h4>Todos os Direitos Reservados PharmaVeriz; &copy; 2023-2026</h4>
       </div>
     </div>
-  </body>
+</body>
 
 </html>
+
+<script>
+  function entrar(){
+    window.location = 'cadastro.html'
+  }
+
+  function descer(){
+    window.location = '#social'
+  }
+</script>
