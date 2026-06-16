@@ -11,19 +11,21 @@ body {
   padding: 0;
   font-family: Inter;
   overflow: hidden;
-  background-image: url('../assets/imagens/BG_LoginCadastro.jpg');
+  background-image: url('../assets/imagens/BG_LoginCadastro.jpg'); background-image: url("../assets/imgs/login_fundo.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center ;
 }
 
+
 .header{
-    background-color: #1A3868;
+    background-color: #ffffff00;
     height: 80px;
     width: 100%;
 
     display: flex;
     justify-content: space-around;
     align-items: center;
-
-    border-bottom: 2px solid rgba(0, 0, 0, 0.486);
 }
 
 .img-logo{
@@ -40,7 +42,7 @@ a{
   font-size: 16px;
   font-weight: 600;
   font-family: Inter;
-  color: rgb(0, 132, 255);
+  color: rgb(255, 255, 255);
   text-decoration: none;
   padding: 10px 150px;
 }
@@ -62,9 +64,9 @@ a{
 
     border-radius: 80px;
 
-    background: #1898CF;
+    background: #22cfc9;
 
-    border: 0px #0D4D69;
+    border: 0px #27cec0;
 
     font-size: 14px;
     font-weight: 400;
@@ -78,7 +80,7 @@ a{
 }
 
 .voltar:hover{
-    background-color: #4ac2f5;
+    background-color: rgb(52, 221, 202);
     transform: scale(1.05);
 }
 
@@ -97,10 +99,11 @@ a{
     height: 100%;
     width: 100%;
 
-
+    margin-left: 45%;
+      
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
 }
 
 h2{
@@ -121,7 +124,7 @@ h2{
     gap: 16px;
 
     align-items: center;
-
+    margin-top: 16%;
     border-radius: 36px;
     transition: all 0.3s ease-in-out;
     box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.237);
@@ -182,26 +185,27 @@ input{
     cursor: pointer;
     transition: 0.3s;
     
-    color: white;
-    background-color: white;
-    border: 2px solid rgb(0, 132, 255);
+    color: rgb(245, 242, 242);
+    background-color: #27d1c3;
+    border: 2px solid rgb(255, 255, 255);
+
 }
 
 .botao:hover{
     color: white;
-    background-color: rgb(0, 132, 255);
+    background-color: rgb(52, 221, 202);
 }
 
 .link-entrar{
     font-size: 16px;
     font-weight: bold;
-    color: rgb(0, 132, 255);
+    color: #0F8E84;
     text-decoration: none;
     transition: all 0.3s ease-in-out;
 }
 
 .link-entrar:hover{
-    color: #4ac2f5;
+    color: #20d9dc;
 }
 
 
@@ -276,3 +280,15 @@ input{
   height: 50px;
   width: 50px;
 }
+
+.fala{
+    position: absolute;
+    height: 300px;
+    width: 500px;
+    margin-left: 15%;
+    margin-top:8% ;
+}
+
+h1{font-size: 50px ;}
+h1 p{color: #1bd2bf;
+margin-top: 0;}

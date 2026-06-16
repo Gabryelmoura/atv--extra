@@ -14,12 +14,12 @@ body{
     background-image: url("../assets/imgs/login_fundo.png");
     background-size: cover;
     background-repeat: no-repeat;
-    background-position: center;
+    background-position: center ;
 }
 
 /* Estilização do Cabeçalho */
 .header{
-    background-color: #ffffff;
+    background-color: #fbfbfb00;
     height: 80px;
     width: 100%;
 
@@ -27,7 +27,6 @@ body{
     justify-content: space-around;
     align-items: center;
 
-    border-bottom: 2px solid rgba(13, 90, 33, 0.486);
 }
 
 .img-logo{
@@ -65,9 +64,9 @@ a{
 
     border-radius: 80px;
 
-    background: #0ea074;
+    background: #22cfc9;
 
-    border: 0px #098e6b;
+    border: 0px #27cec0;
 
     font-size: 14px;
     font-weight: 400;
@@ -81,7 +80,7 @@ a{
 }
 
 .voltar:hover{
-    background-color: #15ca9a;
+    background-color: #1bd2bf;
     transform: scale(1.05);
 }
 
@@ -99,11 +98,11 @@ a{
 
 .formulario{
     height: 100%;
-    width: 1000px;
-    margin-left: 50%;
+    width: 100%;
+    margin-left: 45%;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
 }
 
@@ -115,20 +114,20 @@ h2{
 
 .form{
     background-color: white;
-    width: 450px;
+    width: 600px;
     padding: 32px 16px;
-
+    margin-top: 5%;
     display: flex;
     flex-direction: column;
     justify-content: center;
 
-    gap: 16px;
+    gap: 10px;
 
     align-items: center;
 
     border-radius: 36px;
     transition: all 0.3s ease-in-out;
-    box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.237);
+    box-shadow: 3px 5px 3px rgba(0, 0, 0, 0.237);
 }
 
 .form-inputs{
@@ -174,26 +173,26 @@ input{
     cursor: pointer;
     transition: 0.3s;
     
-    color: white;
-    background-color: white;
-    border: 2px solid rgb(0, 132, 255);
+    color: rgb(255, 255, 255);
+    background-color: #27d1c3;
+    border: 2px solid rgb(255, 255, 255);
 }
 
 .entrar:hover{
     color: white;
-    background-color: rgb(0, 132, 255);
+    background-color: rgb(52, 221, 202);
 }
 
 .link-entrar{
     font-size: 16px;
     font-weight: bold;
-    color: rgb(0, 132, 255);
+    color: #0F8E84;
     text-decoration: none;
     transition: all 0.3s ease-in-out;
 }
 
 .link-entrar:hover{
-    color: #4ac2f5;
+    color: #20d9dc;
 }
 
 /*Estilizações do web data viz*/
@@ -231,3 +230,14 @@ input{
   width: 50px;
 }
 
+.fala{
+    position: absolute;
+    height: 300px;
+    width: 500px;
+    margin-left: 15%;
+    margin-top:8% ;
+}
+
+h1{font-size: 50px ;}
+h1 p{color: #1bd2bf;
+margin-top: 0;}
