@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PharmaVeris · Insights</title>
+  <!-- Font Awesome (opcional, para ícones) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  
+  
+  <style>*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Segoe UI',sans-serif;
+}
+
+body{
+    background:#eef5f4;
+    min-height:100vh;
+    padding:30px;
+}
+
+.dashboard{
+    max-width:1400px;
+    margin:auto;
+    background:#fff;
+    border-radius:24px;
+    overflow:hidden;
+    box-shadow:0 15px 40px rgba(0,0,0,.08);
+}
+
+/* ==========================
+   HEADER
+========================== */
+
+.brand-header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:30px 40px;
+    border-bottom:1px solid #e7efee;
+    background:#fff;
+}
+
+.brand h1{
+    font-size:2rem;
+    color:#16354d;
+    font-weight:700;
+}
+
+.brand h1 i{
+    color:#19a38c;
+}
+
+.tagline{
+    margin-top:8px;
+    color:#7a8b96;
+    font-size:.95rem;
+}
+
+.tagline i{
+    color:#19a38c;
+}
+
+.trust-badge{
+    background:#f3faf8;
+    border:1px solid #d7ece7;
+    color:#14856f;
+    padding:12px 20px;
+    border-radius:50px;
+    font-size:.9rem;
+    font-weight:600;
+}
+
+.trust-badge i{
+    color:#19a38c;
+}
+
+/* ==========================
+   HERO
+========================== */
+
+.insight-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:25px;
+    padding:35px;
+}
+
+/* ==========================
+   CARDS
+========================== */
+
+.card{
+    background:#fff;
+    border:1px solid #e7efee;
+    border-radius:20px;
+    padding:25px;
+    transition:.3s;
+    box-shadow:0 4px 20px rgba(0,0,0,.03);
+}
+
+.card:hover{
+    transform:translateY(-4px);
+    box-shadow:0 12px 30px rgba(0,0,0,.07);
+}
+
+.card-header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:25px;
+}
+
+.card-header h3{
+    color:#16354d;
+    font-size:1.05rem;
+    display:flex;
+    align-items:center;
+    gap:10px;
+}
+
+.card-header h3 i{
+    color:#19a38c;
+}
+
+.badge-cpi{
+    background:#ecf8f5;
+    color:#14856f;
+    padding:6px 12px;
+    border-radius:30px;
+    font-size:.75rem;
+    font-weight:600;
+}
+
+/* ==========================
+   KPIS
+========================== */
+
+.cpi-value{
+    font-size:3rem;
+    font-weight:700;
+    color:#16354d;
+}
+
+.cpi-desc{
+    margin-top:10px;
+    color:#6e7f8d;
+}
+
+.progress-bar-bg{
+    height:10px;
+    background:#e8f0ef;
+    border-radius:20px;
+    margin:20px 0;
+    overflow:hidden;
+}
+
+.progress-fill{
+    height:100%;
+    border-radius:20px;
+    background:linear-gradient(
+        90deg,
+        #19a38c,
+        #2ecc71
+    );
+}
+
+/* ==========================
+   CHIPS
+========================== */
+
+.chip-list{
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+}
+
+.chip{
+    background:#f6fbfa;
+    border:1px solid #dfeceb;
+    padding:8px 14px;
+    border-radius:50px;
+    color:#40606e;
+    font-size:.85rem;
+}
+
+.chip i{
+    color:#19a38c;
+}
+
+/* ==========================
+   BARRAS
+========================== */
+
+.chart-container{
+    margin-top:15px;
+}
+
+.bar-item{
+    display:flex;
+    align-items:center;
+    gap:15px;
+    margin-bottom:15px;
+}
+
+.bar-label{
+    width:120px;
+    font-size:.85rem;
+    color:#274254;
+    font-weight:500;
+}
+
+.bar-track{
+    flex:1;
+    height:24px;
+    background:#edf4f3;
+    border-radius:50px;
+    overflow:hidden;
+}
+
+.bar-fill{
+    height:100%;
+    display:flex;
+    justify-content:flex-end;
+    align-items:center;
+    padding-right:10px;
+    color:white;
+    font-size:.75rem;
+    font-weight:600;
+    border-radius:50px;
+    background:linear-gradient(
+        90deg,
+        #19a38c,
+        #48c9b0
+    );
+}
+
+.bar-fill.orange{
+    background:linear-gradient(
+        90deg,
+        #16a085,
+        #58d68d
+    );
+}
+
+.bar-fill.green{
+    background:linear-gradient(
+        90deg,
+        #1abc9c,
+        #76d7c4
+    );
+}
+
+.bar-fill.purple{
+    background:linear-gradient(
+        90deg,
+        #17a589,
+        #82e0aa
+    );
+}
+
+/* ==========================
+   MINI STATS
+========================== */
+
+.mini-stats{
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+    margin-top:20px;
+}
+
+.stat-item{
+    background:#f6fbfa;
+    border:1px solid #dfeceb;
+    padding:8px 14px;
+    border-radius:50px;
+    color:#40606e;
+    font-size:.85rem;
+}
+
+.stat-item i{
+    color:#19a38c;
+}
+
+/* ==========================
+   FOOTER ACTION
+========================== */
+
+.interactive-zone{
+    grid-column:1/-1;
+    background:linear-gradient(
+        135deg,
+        #f3faf8,
+        #ffffff
+    );
+    border:1px solid #dcebe8;
+    border-radius:20px;
+    padding:25px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.interactive-zone p{
+    color:#1d4f5d;
+    font-weight:500;
+}
+
+.interactive-zone p i{
+    color:#19a38c;
+    font-size:1.2rem;
+}
+
+.btn-group{
+    display:flex;
+    gap:12px;
+}
+
+.btn{
+    padding:12px 22px;
+    border:none;
+    border-radius:50px;
+    cursor:pointer;
+    font-weight:600;
+    transition:.3s;
+}
+
+.btn-primary{
+    background:#19a38c;
+    color:white;
+}
+
+.btn-primary:hover{
+    background:#148f77;
+}
+
+.btn:not(.btn-primary){
+    background:white;
+    border:1px solid #d7ece7;
+    color:#315463;
+}
+
+.btn:not(.btn-primary):hover{
+    background:#f5fbfa;
+}
+
+/* ==========================
+   RESPONSIVO
+========================== */
+
+@media(max-width:950px){
+
+    .brand-header{
+        flex-direction:column;
+        gap:15px;
+        align-items:flex-start;
+    }
+
+    .insight-grid{
+        grid-template-columns:1fr;
+    }
+
+    .interactive-zone{
+        flex-direction:column;
+        gap:20px;
+        text-align:center;
+    }
+
+    .btn-group{
+        width:100%;
+        justify-content:center;
+    }
+}</style>
+</head>
+<body>
+<div class="dashboard">
+
+  <!-- cabeçalho com identidade PharmaVeris -->
+  <div class="brand-header">
+    <div class="brand">
+      <h1><i class="fas fa-flask"></i> PharmaVeris</h1>
+      <span class="tagline"><i class="fas fa-check-circle"></i> Precisão que gera confiança</span>
+    </div>
+    <div class="trust-badge">
+      <i class="fas fa-shield-alt"></i> GMP · ANVISA · dados em tempo real
+    </div>
+  </div>
+
+  <!-- grade de CPIs e gráficos -->
+  <div class="insight-grid" id="insightGrid">
+
+    <!-- CPI: Medicamentos mais comprados (gráfico de barras) -->
+    <div class="card">
+      <div class="card-header">
+        <h3><i class="fas fa-capsules"></i> Top medicamentos</h3>
+        <span class="badge-cpi"><i class="far fa-clock"></i> atualizado</span>
+      </div>
+      <div class="chart-container" id="medChart">
+        <!-- barras geradas via JS -->
+      </div>
+      <div class="mini-stats">
+        <span class="stat-item"><i class="fas fa-arrow-up" style="color:#1f9a6e;"></i> +12% vendas</span>
+        <span class="stat-item"><i class="fas fa-chart-pie"></i> 43% do mercado</span>
+      </div>
+    </div>
+
+    <!-- CPI: Público que mais compra (gráfico de barras com perfis) -->
+    <div class="card">
+      <div class="card-header">
+        <h3><i class="fas fa-users"></i> Perfil de compradores</h3>
+        <span class="badge-cpi"><i class="fas fa-rotate-right"></i> randômico</span>
+      </div>
+      <div class="chart-container" id="publicChart">
+        <!-- barras geradas via JS -->
+      </div>
+      <div class="mini-stats">
+        <span class="stat-item"><i class="fas fa-venus-mars"></i> 54% Mulheres</span>
+        <span class="stat-item"><i class="fas fa-calendar-alt"></i> 35-54 anos</span>
+      </div>
+    </div>
+
+    <!-- CPI adicional: volume de prescrições + interatividade -->
+    <div class="card">
+      <div class="card-header">
+        <h3><i class="fas fa-prescription-bottle"></i> Prescrições ativas</h3>
+       
+      </div>
+      <div class="cpi-value" id="prescValue">2.847</div>
+      <div class="cpi-desc"><i class="fas fa-arrow-up" style="color:#1f9a6e;"></i> +8,2% vs. mês anterior</div>
+      <div class="progress-bar-bg"><div class="progress-fill" id="prescProgress" style="width: 76%;"></div></div>
+      <div class="chip-list">
+        <span class="chip"><i class="fas fa-hospital"></i> 68% ambulatorial</span>
+        <span class="chip"><i class="fas fa-user-md"></i> 32% hospitalar</span>
+      </div>
+    </div>
+
+    <!-- CPI: Satisfação e confiança (interativo com botão) -->
+    <div class="card">
+       
+      <div class="cpi-value" id="trustValue">94.6<span style="font-size:1.4rem;">%</span></div>
+      <div class="cpi-desc"><i class="fas fa-check-circle" style="color:#1f9a6e;"></i> conformidade GMP </div>
+      <div class="progress-bar-bg"><div class="progress-fill" id="trustProgress" style="width: 94.6%;"></div></div>
+      <div class="chip-list">
+        <span class="chip"><i class="fas fa-flask"></i> 99,8% precisão</span>
+        <span class="chip"><i class="fas fa-clock"></i> <span id="uptimeValue">99.97</span>% uptime</span>
+      </div>
+    </div>
+
+    <!-- Área interativa: atualiza dados randômicos -->
+    <div class="interactive-zone">
+      <p>
+        <i class="fas fa-sync-alt fa-fw"></i> 
+        <span>Dados simulados em tempo real · <span id="lastUpdate">agora</span></span>
+      </p>
+      <div class="btn-group">
+        <button class="btn btn-primary" id="randomizeBtn"><i class="fas fa-dice"></i> Randomizar dados</button>
+        <button class="btn" id="resetBtn"><i class="fas fa-undo-alt"></i> Reset</button>
+      </div>
+    </div>
+
+  </div>
+  <!-- fim grid -->
+</div>
+
+<script>
+  (function() {
+    // ----- dados iniciais (randômicos) -----
+    const medicamentos = ['Atorvastatina', 'Omeprazol', 'Losartana', 'Metformina', 'Amoxicilina'];
+    const perfis = ['Idosos (60+)', 'Adultos (35-59)', 'Jovens (18-34)', 'Crianças (0-17)'];
+
+    // estado
+    let state = {
+      medicamentoVals: [42, 31, 28, 23, 18],   // percentuais / valores
+      perfilVals: [38, 45, 29, 12],
+      prescricoes: 2847,
+      confianca: 94.6,
+      uptime: 99.97,
+    };
+
+    // referências
+    const medChart = document.getElementById('medChart');
+    const publicChart = document.getElementById('publicChart');
+    const prescValue = document.getElementById('prescValue');
+    const prescProgress = document.getElementById('prescProgress');
+    const trustValue = document.getElementById('trustValue');
+    const trustProgress = document.getElementById('trustProgress');
+    const uptimeSpan = document.getElementById('uptimeValue');
+    const lastUpdateSpan = document.getElementById('lastUpdate');
+
+    // funções de render
+
+    function renderMedicamentos() {
+      const total = state.medicamentoVals.reduce((a,b) => a+b, 0) || 1;
+      let html = '';
+      for (let i = 0; i < medicamentos.length; i++) {
+        const pct = Math.round((state.medicamentoVals[i] / total) * 100);
+        const cor = ['', 'orange', 'green', 'purple', ''];
+        const extraClass = (i === 1) ? 'orange' : (i === 2) ? 'green' : (i === 3) ? 'purple' : '';
+        html += `
+          <div class="bar-item">
+            <span class="bar-label">${medicamentos[i]}</span>
+            <div class="bar-track">
+              <div class="bar-fill ${extraClass}" style="width: ${pct}%;">${pct}%</div>
+            </div>
+          </div>
+        `;
+      }
+      medChart.innerHTML = html;
+    }
+
+    function renderPerfis() {
+      const total = state.perfilVals.reduce((a,b) => a+b, 0) || 1;
+      let html = '';
+      const cores = ['', 'orange', 'green', 'purple'];
+      for (let i = 0; i < perfis.length; i++) {
+        const pct = Math.round((state.perfilVals[i] / total) * 100);
+        const extra = (i === 1) ? 'orange' : (i === 2) ? 'green' : (i === 3) ? 'purple' : '';
+        html += `
+          <div class="bar-item">
+            <span class="bar-label">${perfis[i]}</span>
+            <div class="bar-track">
+              <div class="bar-fill ${extra}" style="width: ${pct}%;">${pct}%</div>
+            </div>
+          </div>
+        `;
+      }
+      publicChart.innerHTML = html;
+    }
+
+    function updateCards() {
+      // prescrições
+      const pVal = state.prescricoes;
+      prescValue.textContent = pVal.toLocaleString('pt-BR');
+      const pctPresc = Math.min(100, (pVal / 4000) * 100);
+      prescProgress.style.width = Math.min(100, pctPresc) + '%';
+
+      // confiança
+      const trust = state.confianca;
+      trustValue.innerHTML = trust.toFixed(1) + '<span style="font-size:1.4rem;">%</span>';
+      trustProgress.style.width = Math.min(100, trust) + '%';
+
+      // uptime
+      uptimeSpan.textContent = state.uptime.toFixed(2);
+
+      // barras
+      renderMedicamentos();
+      renderPerfis();
+
+      // timestamp
+      const now = new Date();
+      lastUpdateSpan.textContent = now.toLocaleTimeString('pt-BR', { hour: '2-digit', minute: '2-digit', second: '2-digit' });
+    }
+
+    // gerar números randômicos coerentes
+    function randomizeState() {
+      // medicamentos: soma entre 100 e 180
+      const rawMeds = medicamentos.map(() => Math.floor(Math.random() * 30) + 8);
+      state.medicamentoVals = rawMeds;
+
+      // perfis
+      const rawPerf = perfis.map(() => Math.floor(Math.random() * 25) + 6);
+      state.perfilVals = rawPerf;
+
+      // prescrições entre 1800 e 4200
+      state.prescricoes = Math.floor(Math.random() * 2400) + 1800;
+
+      // confiança entre 88 e 98.5
+      state.confianca = 88 + Math.random() * 10.5;
+
+      // uptime entre 99.5 e 99.99
+      state.uptime = 99.5 + Math.random() * 0.49;
+
+      updateCards();
+    }
+
+    // reset para valores fixos "base"
+    function resetToBase() {
+      state.medicamentoVals = [42, 31, 28, 23, 18];
+      state.perfilVals = [38, 45, 29, 12];
+      state.prescricoes = 2847;
+      state.confianca = 94.6;
+      state.uptime = 99.97;
+      updateCards();
+    }
+
+    // eventos
+    document.getElementById('randomizeBtn').addEventListener('click', function(e) {
+      e.preventDefault();
+      randomizeState();
+    });
+
+    document.getElementById('resetBtn').addEventListener('click', function(e) {
+      e.preventDefault();
+      resetToBase();
+    });
+
+    // inicializar
+    resetToBase();
+
+    // atualização automática a cada 12s (para sensação de dados vivos)
+    setInterval(() => {
+      // pequena variação sem perder a base
+      const delta = (Math.random() - 0.5) * 0.08;
+      state.confianca = Math.min(99.9, Math.max(86, state.confianca + delta));
+      state.uptime = Math.min(99.999, Math.max(99.3, state.uptime + (Math.random() - 0.5) * 0.02));
+      // prescrições variam
+      const prescDelta = Math.floor((Math.random() - 0.5) * 80);
+      state.prescricoes = Math.max(1200, Math.min(5000, state.prescricoes + prescDelta));
+      // pequena variação nas barras (sem destruir)
+      for (let i = 0; i < state.medicamentoVals.length; i++) {
+        const v = state.medicamentoVals[i] + Math.floor((Math.random() - 0.5) * 4);
+        state.medicamentoVals[i] = Math.max(5, Math.min(60, v));
+      }
+      for (let i = 0; i < state.perfilVals.length; i++) {
+        const v = state.perfilVals[i] + Math.floor((Math.random() - 0.5) * 4);
+        state.perfilVals[i] = Math.max(4, Math.min(55, v));
+      }
+      updateCards();
+    }, 10000);
+  })();
+</script>
+</body>
+</html>
