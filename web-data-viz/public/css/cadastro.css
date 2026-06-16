@@ -11,7 +11,7 @@ body{
     font-family: Inter;
     /* overflow: hidden; */
 
-    background-image: url("../assets/imagens/BG_LoginCadastro.jpg");
+    background-image: url("../assets/imgs/login_fundo.png");
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -19,7 +19,7 @@ body{
 
 /* Estilização do Cabeçalho */
 .header{
-    background-color: #1A3868;
+    background-color: #ffffff;
     height: 80px;
     width: 100%;
 
@@ -27,7 +27,7 @@ body{
     justify-content: space-around;
     align-items: center;
 
-    border-bottom: 2px solid rgba(0, 0, 0, 0.486);
+    border-bottom: 2px solid rgba(13, 90, 33, 0.486);
 }
 
 .img-logo{
@@ -44,7 +44,7 @@ a{
     font-size: 16px;
     font-weight: 600;
     font-family: Inter;
-    color: rgb(0, 132, 255);
+    color: rgb(11, 97, 41);
     text-decoration: none;
 }
 
@@ -65,9 +65,9 @@ a{
 
     border-radius: 80px;
 
-    background: #1898CF;
+    background: #0ea074;
 
-    border: 0px #0D4D69;
+    border: 0px #098e6b;
 
     font-size: 14px;
     font-weight: 400;
@@ -81,7 +81,7 @@ a{
 }
 
 .voltar:hover{
-    background-color: #4ac2f5;
+    background-color: #15ca9a;
     transform: scale(1.05);
 }
 
@@ -99,8 +99,8 @@ a{
 
 .formulario{
     height: 100%;
-    width: 100%;
-
+    width: 1000px;
+    margin-left: 50%;
     display: flex;
     flex-direction: column;
     justify-content: center;
